@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="score">
+            <div>Player: <span id="player-score">0</span></div>
+            <div>Computer: <span id="computer-score">0</span></div>
+        </div>
+        <div class="choices">
+            <div class="choice" id="rock" data-choice="rock">
+                <div class="card">
+                    <div class="front">✊</div>
+                    <div class="back">Rock</div>
+                </div>
+            </div>
+            <div class="choice" id="paper" data-choice="paper">
+                <div class="card">
+                    <div class="front">✋</div>
+                    <div class="back">Paper</div>
+                </div>
+            </div>
+            <div class="choice" id="scissors" data-choice="scissors">
+                <div class="card">
+                    <div class="front">✌️</div>
+                    <div class="back">Scissors</div>
+                </div>
+            </div>
+        </div>
+        <div class="battle-area">
+            <div class="player-choice">
+                <h3>You</h3>
+                <div id="player-display"></div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="computer-choice">
+                <h3>Computer</h3>
+                <div id="computer-display"></div>
+            </div>
+        </div>
+        <div id="result"></div>
+        <div class="controls">
+            <button id="live-mode-btn">Start Live Mode</button>
+            <button id="sound-toggle-btn">🔊 Sound On</button>
+            <button id="reset-btn">Reset Scores</button>
+            <button id="camera-btn">📷 Enable Camera</button>
+            <select id="difficulty-select">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div id="camera-container" style="display: none;">
+            <video id="camera-feed" autoplay playsinline></video>
+            <canvas id="gesture-canvas" style="display: none;"></canvas>
+            <div id="gesture-status">Gesture: None detected</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
